@@ -1,0 +1,15 @@
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/bin/Debug/net7.0/corpoPractice4
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/bin/Debug/net7.0/corpoPractice4.deps.json
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/bin/Debug/net7.0/corpoPractice4.runtimeconfig.json
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/bin/Debug/net7.0/corpoPractice4.dll
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/bin/Debug/net7.0/corpoPractice4.pdb
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.csproj.AssemblyReference.cache
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.GeneratedMSBuildEditorConfig.editorconfig
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.AssemblyInfoInputs.cache
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.AssemblyInfo.cs
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.csproj.CoreCompileInputs.cache
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.dll
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/refint/corpoPractice4.dll
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.pdb
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/corpoPractice4.genruntimeconfig.cache
+/home/voldezhur/Desktop/Универ/Корпоратив/C#/corpoPractice4/obj/Debug/net7.0/ref/corpoPractice4.dll

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corpoPractice4", "corpoPractice4\corpoPractice4.csproj", "{EACD579F-34B8-4C86-830C-DC563B9E42AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corpoPractice4LINQ", "corpoPractice4LINQ\corpoPractice4LINQ.csproj", "{F5365686-91EA-4003-B2FF-F668BB65EEB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corpoPractice5", "corpoPractice5\corpoPractice5.csproj", "{02AD28C8-B7D2-4E57-9E72-7AA27F535641}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EACD579F-34B8-4C86-830C-DC563B9E42AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EACD579F-34B8-4C86-830C-DC563B9E42AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EACD579F-34B8-4C86-830C-DC563B9E42AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EACD579F-34B8-4C86-830C-DC563B9E42AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5365686-91EA-4003-B2FF-F668BB65EEB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5365686-91EA-4003-B2FF-F668BB65EEB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5365686-91EA-4003-B2FF-F668BB65EEB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5365686-91EA-4003-B2FF-F668BB65EEB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
