@@ -3,3 +3,4 @@
 123-Perekrestok-150
 125-Perekrestok-4000
 126-Perekrestok-3500
+127-Perekrestok-500

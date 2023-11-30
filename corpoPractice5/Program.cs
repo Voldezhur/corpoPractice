@@ -156,23 +156,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
         }
 
-        // Проблема - сейчас берется сумма всех товаров в магазине
         static void number6(IEnumerable<A> list_A, IEnumerable<D> list_D, IEnumerable<E> list_E) {
             var salesByStreet = from a in list_A
                 join e in list_E on a.code equals e.code
-                join d in list_D on e.shop equals d.shop
-                group new {a.street, e.shop, d.price} by new {a.street, e.shop, a.code} into g  // Группируем по улице, магазину и коду покупателя
+                join d in list_D on new {e.shop, e.id} equals new {d.shop, d.id}
+                group new {a.street, e.shop, d.price} by new {a.street, e.shop} into g  // Группируем по улице, магазину и коду покупателя
                 orderby g.Count()
                 select new {
                     g.Key.street,
                     g.Key.shop,
-                    sum = g.Sum(x => {
-                        if (x.shop == g.Key.shop) {
-                            return x.price;
-                        }
-
-                        return 0;
-                    })
+                    sum = g.Sum(x => x.price)
                 };
 
             foreach (var item in salesByStreet) {
@@ -180,6 +173,56 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
         }
         
+        static void number7(IEnumerable<A> list_A, IEnumerable<C> list_C, IEnumerable<D> list_D, IEnumerable<E> list_E) {
+            var discountsByStreet = from e in list_E
+                join a in list_A on e.code equals a.code
+                join d in list_D on new {e.id, e.shop} equals new {d.id, d.shop}
+                join c in list_C on new {e.code, e.shop} equals new {c.code, c.shop}
+
+                // В группу записываем стоимость товаров по артикулу, улице и скидке
+                group d.price by new {e.id, a.street, c.discount} into pricesByStreet
+
+                select new {
+                    pricesByStreet.Key.id,
+                    pricesByStreet.Key.street,
+                    totalDiscount = pricesByStreet.Sum() * pricesByStreet.Key.discount * 0.01
+                };
+
+            var mergedDiscount = from item in discountsByStreet
+                // В группу записываем цены товара с учетом скидки по артикулу и улице
+                group item.totalDiscount by new {item.id, item.street} into g
+                
+                select new {
+                    g.Key.id,
+                    g.Key.street,
+                    totalDiscount = g.Sum()
+                };
+
+            foreach (var item in mergedDiscount.OrderBy(x => x.id).ThenBy(x => x.street)) {
+                Console.WriteLine($"Артикул товара: {item.id}, улица: {item.street}, суммарная скидка: {item.totalDiscount}");
+            }
+        }
+
+        // Сделать Sum() с условием того, то если есть скидка на товар, она добавляется, если нет, складывается просто цена товара
+        static void number8(IEnumerable<B> list_B, IEnumerable<C> list_C, IEnumerable<D> list_D, IEnumerable<E> list_E) {
+            var result = from b in list_B
+                join e in list_E on b.id equals e.id
+                join d in list_D on b.id equals d.id
+                join c in list_C on e.code equals c.code
+
+                group d.price by new {b.country, e.code} into g
+                orderby g.Key.country, g.Key.code
+                select new {
+                    g.Key.country,
+                    g.Key.code,
+                    totalCost = g.Sum()
+                };
+
+            foreach (var item in result) {
+                Console.WriteLine($"Страна-производитель: {item.country}, код потребителя: {item.code}, суммарная стоимость: {item.totalCost}");
+            }
+        }
+
 
         // Читает файл и возвращает по строкам
         static string[] getFromFile(string path) {
@@ -237,13 +280,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                     i.Split('-')[2]
                                 );
 
+
             // Вызов методов задач
             // number1(list_A, list_C);
             // number2(list_A, list_C);
             // number3(list_B, list_D);
             // number4(list_D, list_E);
             // number5(list_A, list_B, list_E);
-            number6(list_A, list_D, list_E);
+            // number6(list_A, list_D, list_E);
+            // number7(list_A, list_C, list_D, list_E);
+            number8(list_B, list_C, list_D, list_E);
         }
     }
 }
