@@ -101,16 +101,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
         }
 
-        // Доделать (Количество магазинов смотрит по артикулам товаров)
         static void number3(IEnumerable<B> list_B, IEnumerable<D> list_D) {
             var items = from b in list_B
-                join d in list_D on b.id equals d.id into tempGroup
-                where tempGroup.Any()
-                group b by b.category into g
+                join d in list_D on b.id equals d.id
+                group new {d.shop, b.country, b.category} by b.category into g
                 orderby g.Count(), g.Key
                 select new {
                     category = g.Key,
-                    numberOfShops = g.Select(x => x.id).Distinct().Count(),  // Надо, чтобы смотрел по магазинам, а не по артикулам
+                    numberOfShops = g.Select(x => x.shop).Distinct().Count(),
                     numberOfCountries = g.Select(x => x.country).Distinct().Count()
                 };
 
@@ -203,23 +201,23 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
         }
 
-        // Сделать Sum() с условием того, то если есть скидка на товар, она добавляется, если нет, складывается просто цена товара
+        // В сумме группировать по магазинам
         static void number8(IEnumerable<B> list_B, IEnumerable<C> list_C, IEnumerable<D> list_D, IEnumerable<E> list_E) {
             var result = from b in list_B
                 join e in list_E on b.id equals e.id
                 join d in list_D on b.id equals d.id
                 join c in list_C on e.code equals c.code
 
-                group d.price by new {b.country, e.code} into g
+                group new {d.price, e.shop} by new {b.country, e.code} into g
                 orderby g.Key.country, g.Key.code
                 select new {
                     g.Key.country,
                     g.Key.code,
-                    totalCost = g.Sum()
+                    // totalCost = g.GroupBy(x => x.shop)
                 };
 
             foreach (var item in result) {
-                Console.WriteLine($"Страна-производитель: {item.country}, код потребителя: {item.code}, суммарная стоимость: {item.totalCost}");
+                // Console.WriteLine($"Страна-производитель: {item.country}, код потребителя: {item.code}, суммарная стоимость: {item.totalCost}");
             }
         }
 
@@ -289,7 +287,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // number5(list_A, list_B, list_E);
             // number6(list_A, list_D, list_E);
             // number7(list_A, list_C, list_D, list_E);
-            number8(list_B, list_C, list_D, list_E);
+            // number8(list_B, list_C, list_D, list_E);
         }
     }
 }

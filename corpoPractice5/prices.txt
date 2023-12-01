@@ -4,3 +4,5 @@
 125-Perekrestok-4000
 126-Perekrestok-3500
 127-Perekrestok-500
+127-Pyaterochka-300
+128-Perekrestok-1000
