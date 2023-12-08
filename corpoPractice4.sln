@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corpoPractice4LINQ", "corpo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corpoPractice5", "corpoPractice5\corpoPractice5.csproj", "{02AD28C8-B7D2-4E57-9E72-7AA27F535641}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corpoPractice6", "corpoPractice6\corpoPractice6.csproj", "{CA2C288C-7EB8-44B2-A1A6-EF2590895801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02AD28C8-B7D2-4E57-9E72-7AA27F535641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2C288C-7EB8-44B2-A1A6-EF2590895801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2C288C-7EB8-44B2-A1A6-EF2590895801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2C288C-7EB8-44B2-A1A6-EF2590895801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2C288C-7EB8-44B2-A1A6-EF2590895801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
